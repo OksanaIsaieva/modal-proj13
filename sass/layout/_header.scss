@@ -1,0 +1,45 @@
+/* Header */
+header {
+    position: relative;
+    padding-top: 14px;
+    justify-content: baseline;
+    @media screen and(min-width:$tablet) {
+        padding-top: 20px;
+    }
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.button__label{
+    display: flex;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    
+}
+
+.navigation__list{
+    display: flex;
+    @media screen and(max-width:$pre-desktop) {
+            display: none;
+        }
+}
+.navigation__list li{
+    &:not(:last-child){
+    margin-right: 28px;
+    }
+}
+
+.navigation__link{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $text-primary-color;
+}

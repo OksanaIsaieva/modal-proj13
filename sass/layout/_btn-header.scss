@@ -1,0 +1,161 @@
+/* Button */
+.btn-light {
+    position: relative;
+    cursor: pointer;
+    padding: 12px 36px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: calc(17 / 14);
+    border: 1px solid transparent;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: $bcg-button-icon-accent-color;
+    min-width: 155px;
+    height: 42px;
+    transition: background-color 250ms linear;    
+   
+    &:hover {
+        background-color: #0A8817;
+        border: 1px solid #0A8817;
+        }
+    &:focus {
+        background-color: #0A8817;
+        color: $text-minor-color;
+        border: 1px solid #0A8817;
+    }
+    &:disabled{
+        background-color: #ABABAB;
+    }
+
+}
+.header__button{
+    margin-left: 36px;
+    @media screen and(max-width:$pre-tablet) {
+        display: none;
+    }
+}
+.header___button.is-hidden {
+    margin-left: auto;
+    transition: all 250ms linear;
+}
+
+.header__button span {
+    margin-right: 7.75px;
+}
+.btn-light:hover svg{
+    fill: $text-minor-color;
+}
+.header__button svg {
+    position: absolute;
+    top: 15px;
+    
+}
+
+// Hero button
+.hero__button {
+    position: relative;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(15 / 12);
+    color: $text-btn-color;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid $bcg-button-icon-accent-color;
+    border-radius: 8px;
+    min-width: 108px;
+    padding: 11px 26px 11px 26px;
+    @media  screen and (min-width:$desktop) {
+        font-size: 14px;
+        line-height: calc(18 / 14);
+        min-width: 134px;
+        padding-left: 34px;
+    }
+        &:hover {
+            border: 1px solid #0A8817;
+        }
+    
+        &:focus {
+            color: $text-minor-color;
+            border: 1px solid #0A8817;
+        }
+    
+        &:disabled {
+            border: 1px solid #ABABAB;
+        }
+
+}
+.hero__button span {
+    padding-right: 7.75px;
+}
+.hero__button svg{
+    position: absolute;
+    top: 15px;
+    
+}
+
+.hero__list{
+    display: flex;
+}
+
+.hero__button--second {
+    cursor: pointer;
+    border: none;
+    color: $bcg-button-icon-accent-color;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(15 / 12);
+    text-decoration-line: underline;
+    @media screen and (min-width:$desktop) {
+        font-size: 14px;
+        line-height: calc(18 / 14);
+        }
+    &:hover {
+        color: #0A8817;
+
+        }
+        
+    &:focus {
+        color: $text-minor-color;
+        }
+        
+    &:disabled {
+        color: #ABABAB;
+        }
+}
+
+// Mobile button
+.mobile-menu-button {
+
+    @media screen and(min-width:$mobile) {
+        display: none;
+    }
+}
+
+.mobile-menu-button span {
+    padding-right: 7.75px;
+
+}
+
+.mobile-menu-button svg {
+    position: absolute;
+    top: 15px;
+    &:focus {
+        fill: $text-minor-color;
+        }
+}
+
+.mobile-menu-button.is-hidden {
+    margin-left: auto;
+
+    transition: all 250ms linear;
+}

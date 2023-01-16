@@ -1,0 +1,358 @@
+// Backdrop
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: transparent;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.backdrop.is-hidden .backdrop__modal {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.backdrop__modal {
+    border: 2px solid $bcg-button-icon-accent-color;
+    border-radius: 10px;
+    position: absolute;
+    background-color: $text-primary-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 90%;
+    overflow: auto;
+    max-height: 95vh;
+    @media screen and(min-width:$mobile) {
+            width: 90%;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    
+        @media screen and(min-width:$tablet) {
+            width: 80%;
+        }
+    
+        @media screen and(min-width:$desktop) {
+            width: 50%;
+        }
+}
+
+.backdrop__modal--close {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+.backdrop__icon {
+    width: 100%;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop__title {
+    margin-top:  28px;
+    margin-bottom: 20px;
+    font-family: 'Seymour One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: calc(24 / 16);
+    text-align: center;
+    color: $text-main-color;
+    @media screen and(min-width:$tablet) {
+        margin-top: 32px;
+        margin-bottom: 40px;
+        font-size: 20px;
+        line-height: calc(28 / 20);
+        }
+}
+// Form checkbox
+.backdrop__modal{  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form__check {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.check__icon li{
+    text-align: center;
+}
+
+.form__checkbox{
+    @include visually-hidden;
+    position: absolute;
+}
+
+.check__icon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.check__box-first {
+    width: 132px;
+    height: 132px;
+    border-radius: 98px;
+    background: linear-gradient(0deg, rgba(156, 190, 143, 0.7), rgba(156, 190, 143, 0.7)), $dot-reviews-color;
+    box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+    // background-image: url('../images/png1x-ice-creame-modal-buy-min.png');
+    // @media screen and (min-resolution: 192dpi),
+    //     screen and (min-resolution: 2dppx) {
+    //         background-image: url('../images/png2x-ice-creame-modal-buy-min.png');
+    //     }
+     
+    //     @media screen and(min-width:$tablet) {
+    //         background-image: url('../images/png1x-products-ice-creame-desktop-min.png');
+    
+    //         @media screen and (min-device-pixel-ratio: 2),
+    //         screen and (min-resolution: 192dpi),
+    //         screen and (min-resolution: 2dppx) {
+    //             background-image: url('../images/png2x-products-ice-creame-desktop-min.png');
+    //         }
+    //     }
+    //     @media screen and(min-width:$desktop) {
+    //         background-image: url('../images/png1x-products-ice-creame-desktop-min.png');
+        
+    //         @media screen and (min-device-pixel-ratio: 2),
+    //             screen and (min-resolution: 192dpi),
+    //             screen and (min-resolution: 2dppx) {
+    //                     background-image: url('../images/png2x-products-ice-creame-desktop-min.png');
+    //                 }
+    //             }
+}
+
+.check__box-first::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 132px;
+    height: 136px;
+    border: 2px solid #96AF8C;
+    filter: drop-shadow(0px 5.26027px 19.726px rgba(212, 20, 67, 0.1));
+    border-radius: 15px;
+}
+
+.text-first-check{
+    position: absolute;
+    margin-top: 152px;
+}
+
+.check__box-second {
+    position: absolute;
+    width: 132px;
+    height: 132px;
+    border-radius: 98px;
+    background: linear-gradient(0deg, rgba(156, 190, 143, 0.7), rgba(156, 190, 143, 0.7)), #D9D9D9;
+    box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+    background-image: url('../images/png1x-ice-coffee-modal-buy-min.png');
+
+    @media screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+            background-image: url('../images/png2x-ice-coffee-modal-buy-min.png');
+        }
+    
+    
+        @media screen and(min-width:$tablet) {
+            background-image: url('../images/png1x-products-ice-coffee-tablet-mob-min.png');
+    
+            @media screen and (min-device-pixel-ratio: 2),
+            screen and (min-resolution: 192dpi),
+            screen and (min-resolution: 2dppx) {
+                background-image: url('../images/png2x-products-ice-coffee-tablet-mob-min.png');
+            }
+        }
+        @media screen and(min-width:$desktop) {
+            background-image: url('../images/png1x-products-ice-coffee-desktop-min.png');
+        
+            @media screen and (min-device-pixel-ratio: 2),
+                screen and (min-resolution: 192dpi),
+                screen and (min-resolution: 2dppx) {
+                    background-image: url('../images/png2x-products-ice-coffee-desktop-min.png');
+                }
+            }
+}
+
+.check__box-second::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 132px;
+    height: 136px;
+    border: 2px solid #EFD478;
+    box-shadow: 0px 5.26027px 19.726px rgba(212, 20, 67, 0.1);
+    border-radius: 15px;
+}
+
+.text-second-check {
+    position: absolute;
+    margin-top: 152px;
+}
+
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &:not(:last-child){
+        margin-bottom: 12px;
+    }
+
+    @media screen and(min-width:$tablet) {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+            }
+         }
+
+
+}
+.text-first-check {
+    position: absolute;
+    margin-top: 152px;
+}
+
+.check__box-third {
+    position: absolute;
+    width: 132px;
+    height: 132px;
+    border-radius: 98px;
+    background: linear-gradient(0deg, rgba(213, 117, 63, 0.7), rgba(213, 117, 63, 0.7)), #D9D9D9;
+        box-shadow: 0px 5.26027px 19.726px rgba(0, 0, 0, 0.25);
+    background-image: url('../images/png1x-milkshakes-modal-buy-min.png');
+    @media screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+            background-image: url('../images/png2x-milkshakes-modal-buy-min.png');
+        }
+    
+     @media screen and(min-width:$tablet) {
+            background-image: url('../images/png1x-products-milkshakes-tablet-mob-min.png');
+    
+            @media screen and (min-device-pixel-ratio: 2),
+            screen and (min-resolution: 192dpi),
+            screen and (min-resolution: 2dppx) {
+                background-image: url('../images/png2x-products-milkshakes-tablet-mob-min.png');
+            }
+        }
+        @media screen and(min-width:$desktop) {
+            background-image: url('../images/png1x-products-milkshakes-desktop-min.png');
+
+        @media screen and (min-device-pixel-ratio: 2),
+                screen and (min-resolution: 192dpi),
+                screen and (min-resolution: 2dppx) {
+                    background-image: url('../images/png2x-products-milkshakes-desktop-min.png');
+                    }
+                 }
+}
+
+.check__box-third::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 132px;
+    height: 136px;
+    border: 2px solid #D6936D;
+        filter: drop-shadow(0px 5.26027px 19.726px rgba(212, 20, 67, 0.1));
+    border-radius: 15px;
+}
+
+.text-third-check {
+    position: absolute;
+    margin-top: 152px;
+}
+
+// input::placeholder {
+//    font-family: 'Montserrat';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 12px;
+//     line-height: calc(17 / 12);
+
+//     color: #131313;
+
+// }
+
+.form__group  input{
+    background: rgba(248, 210, 78, 0.1);
+    border: 1px solid #84A178;
+    border-radius: 10px;
+    height: 32px;
+    padding: 8px;
+    padding-left: 12px;
+    outline: none;
+    width: calc(100% - 2 * 28px);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+    
+.form__group textarea {
+    padding: 8px 12px;
+
+}
+
+.form__comment {
+    resize: none;
+    outline: none;
+    width: calc(100% - 2 * 28px);
+    background: rgba(248, 210, 78, 0.1);
+        border: 1px solid #84A178;
+        border-radius: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus {
+        border: 1px solid var(--accent-color);
+    }
+}
+
+
+.form__button {
+    min-width: 114px;
+    min-height: 42px;
+    margin: 0 auto;
+    margin-top: 26px;
+    margin-bottom: 29px;
+    display: block;
+    justify-content: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(15 / 12);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: #F8D24E;
+    border-radius: 10px;
+    border: 1px solid #F8D24E;
+    @media screen and(min-width:$tablet) {
+        margin-top: 32px;
+        margin-bottom: 32px;
+        font-size: 14px;
+        line-height: calc(17 / 14);
+        width: 121px;
+        }
+    
+}
